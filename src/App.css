@@ -1,38 +1,137 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 100px;
+  text-align: center;
+  justify-content: space-between;
+  background-color: #3C3C3C;
+  height: 100vh;
+}
+
+h1 {
+  color: white;
+  font-weight: 800;
+  font-size: 50px;
+}
+h2 {
   color: white;
 }
+.left {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
 
-.App-link {
-  color: #61dafb;
+  align-items: center;
+}
+.form {
+  position: relative;
+  height: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.form input {
+  border-radius: 20px;
+  border: 1px solid white;
+  color: #1D1D1D;
+  padding: 15px 25px;
+  font-size: 20px;
+}
+.form label {
+  border-radius: 20px;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form button {
+  position: absolute;
+  top: 65%;
+  right: 10px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+}
+
+.formResult {
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid white;
+  color: #1D1D1D;
+  padding: 150px;
+  overflow: hidden;
+  width: fit-content;
+  margin: 100px auto;
+  position: relative;
+  color: white;
+  font-size: 20px;
+}
+.formResult > div:not(:first-child) {
+  position: relative;
+  z-index: 2;
+}
+.Clouds {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-image: url("https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?cs=srgb&dl=pexels-pixabay-53594.jpg&fm=jpg");
+  filter: contrast(100%) brightness(60%);
+  z-index: 0;
+}
+.Clear {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  
+  background-image: url("https://lh3.googleusercontent.com/CnHg3skxcIhFKh5oE_ZV61x-a-tqWKIWC04a4hWkmQymuBRGlp3Kgnr_d3bEj-jgvPZAM1kh4nkpALUr0bDaUJdzPQ=w640-h400-e365-rj-sc0x00ffffff");
+}
+.Rain {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  
+  background-image: url("https://media.istockphoto.com/photos/rain-fall-on-the-ground-picture-id1049365996?b=1&k=20&m=1049365996&s=612x612&w=0&h=CSAFCQ5M8sxFqW0brPFD7XHHp82ZgrQ62ffLqEamCN0=");
+  filter: grayscale(100%);
+}
+
+.formResult-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-message {
+  color: red;
+  background-color: #FF000020; 
+  width: fit-content;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid red;
+  margin: 100px auto;
+}
+.cities-choice {
+  margin: 0 auto;
+}
+.city {
+  padding: 15px;
+  border-radius: 20px;
+  background-color: white;
+  max-width: 100%;
+  margin: 10px 0;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+.city:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 10px 15px rgba(0,0,0,.5);
+}
+
+.active {
+  border-color: #32CD32;
 }
